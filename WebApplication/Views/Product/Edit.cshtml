@@ -1,0 +1,48 @@
+﻿@model WebApplication.Models.ProductViewModel
+
+@{
+    ViewData["Title"] = "Editar de produto";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card card-dark">
+            <div class="card-header">
+                <h3 class="card-title">Editar de produto</h3>
+            </div>
+
+            <form asp-action="Edit">
+                <div class="card-body">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <input asp-for="Id" class="form-control" hidden="hidden" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Sku" class="control-label"></label>
+                        <input asp-for="Sku" class="form-control" />
+                        <span asp-validation-for="Sku" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Editar" class="btn btn-outline-primary" />
+                        <a asp-action="Index" class="btn btn-outline-danger">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

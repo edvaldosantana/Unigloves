@@ -1,0 +1,49 @@
+﻿@model WebApplication.Models.ProductViewModel
+
+@{
+    ViewData["Title"] = "Visualização de produto";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card card-dark">
+            <div class="card-header">
+                <h3 class="card-title">Produto</h3>
+            </div>
+            <div class="card-body">
+
+
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Id)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Id)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Price)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Price)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Sku)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Sku)
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    <a asp-action="Index" class="btn btn-primary">Voltar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
